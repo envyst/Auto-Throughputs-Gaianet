@@ -20,15 +20,19 @@ Auto Throughputs Gaianet is a Node.js script developed by the Aethereal Team. It
    ```bash
    git clone https://github.com/Aethereal-Collective/Auto-Throughputs-Gaianet
    ```
-2. Navigate to directory:
+2. Create screen
+   ```bash
+   screen -S gaianet-throughputs
+   ```
+3. Navigate to directory:
    ```bash
    cd auto-throughputs-gaianet
    ```
-3. Install dependencies:
+4. Install dependencies:
    ```bash
    npm install
    ```
-4. Run the script:
+5. Run the script:
    ```bash
    node index.js
    ```
