@@ -8,7 +8,7 @@ echo "Waiting for the node to start..."
 sleep 5
 
 # Extract Node ID
-node_id=$(docker exec gaianet_node jq -r '.address' nodeid.json)
+node_id=$(docker exec gaianet_node jq -r '.address' /root/gaianet/nodeid.json)
 
 # Extract Device ID
 device_id=$(docker exec gaianet_node cat /root/gaianet/deviceid.txt)
