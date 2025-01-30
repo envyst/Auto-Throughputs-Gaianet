@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y curl && \
 COPY config.json /root/gaianet/config.json
 
 # Ensure .bashrc is sourced
-RUN source ~/.bashrc
+RUN . ~/.bashrc
 
 # Entrypoint script
 COPY docker_entrypoint.sh /usr/local/bin/docker_entrypoint.sh
