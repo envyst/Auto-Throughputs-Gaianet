@@ -9,3 +9,5 @@ services:
     restart: unless-stopped
     ports:
       - "3003:3001"  # Map host port 3030 to container port 3030
+    stdin_open: true
+    tty: true
