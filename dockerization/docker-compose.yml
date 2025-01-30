@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  gaianet:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gaianet_node
+    restart: unless-stopped
+    ports:
+      - "3011:3011"  # Map host port 3011 to container port 3011
+    volumes:
+      - ./node_info:/root/gaianet/node_info                # Mount directory for node_info.txt
+    networks:
+      - gaianet-network
+
+networks:
+  gaianet-network:
+    driver: bridge
