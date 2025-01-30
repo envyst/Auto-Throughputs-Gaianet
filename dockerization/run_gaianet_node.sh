@@ -4,6 +4,8 @@ sudo chmod +x install_docker.sh
 ./install_docker.sh
 docker compose up -d
 
+echo "Waiting for the node to start..."
+sleep 30
 docker exec gaianet_node /root/gaianet/bin/gaianet init
 docker exec gaianet_node /root/gaianet/bin/gaianet start
 
