@@ -8,12 +8,4 @@ services:
     container_name: gaianet_node
     restart: unless-stopped
     ports:
-      - "3030:3030"  # Map host port 3030 to container port 3030
-    volumes:
-      - ./node_info:/root/gaianet/node_info                # Mount directory for node_info.txt
-    networks:
-      - gaianet-network
-
-networks:
-  gaianet-network:
-    driver: bridge
+      - "3003:3001"  # Map host port 3030 to container port 3030

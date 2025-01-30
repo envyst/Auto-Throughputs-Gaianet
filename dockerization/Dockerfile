@@ -1,21 +1,10 @@
-FROM ubuntu:latest
+FROM ubuntu:22.04
 
-# Install dependencies and setup Gaianet
-RUN apt-get update && apt-get install -y curl && \
-    curl -sSfL 'https://github.com/GaiaNet-AI/gaianet-node/releases/latest/download/install.sh' | bash && \
-    rm -rf /root/gaianet/config.json
+RUN apt-get update \
+    && apt-get install curl jq -y
 
-# Copy the config file
+RUN curl -sSfL 'https://github.com/GaiaNet-AI/gaianet-node/releases/latest/download/install.sh' | bash
+RUN rm -rf /root/gaianet/config.json
+RUN . ~/.bashrc 
+
 COPY config.json /root/gaianet/config.json
-
-# Ensure .bashrc is sourced
-RUN . ~/.bashrc
-
-# Entrypoint script
-COPY docker_entrypoint.sh /usr/local/bin/docker_entrypoint.sh
-RUN chmod +x /usr/local/bin/docker_entrypoint.sh
-
-# Expose port 3030
-EXPOSE 3030
-
-ENTRYPOINT ["docker_entrypoint.sh"]

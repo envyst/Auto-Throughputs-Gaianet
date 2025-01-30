@@ -9,7 +9,7 @@
     "embedding_batch_size": "8192",
     "embedding_collection_name": "default",
     "embedding_ctx_size": "8192",
-    "llamaedge_port": "3030",
+    "llamaedge_port": "3001",
     "prompt_template": "phi-3-chat",
     "qdrant_limit": "1",
     "qdrant_score_threshold": "0.9",
