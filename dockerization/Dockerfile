@@ -8,3 +8,6 @@ RUN rm -rf /root/gaianet/config.json
 RUN . ~/.bashrc 
 
 COPY config.json /root/gaianet/config.json
+
+RUN /root/gaianet/bin/gaianet init
+CMD ["/root/gaianet/bin/gaianet", "start"]
