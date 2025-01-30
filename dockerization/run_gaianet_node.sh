@@ -5,7 +5,7 @@ sudo chmod +x install_docker.sh
 docker compose up -d
 
 echo "Waiting for the node to start..."
-sleep 30
+sleep 5
 
 # Extract Node ID
 node_id=$(docker exec gaianet_node jq -r '.address' nodeid.json)
