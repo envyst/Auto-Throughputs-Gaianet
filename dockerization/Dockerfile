@@ -10,5 +10,4 @@ RUN . ~/.bashrc
 COPY config.json /root/gaianet/config.json
 
 RUN /root/gaianet/bin/gaianet init
-RUN /root/gaianet/bin/gaianet start
 CMD ["tail", "-f", "/dev/null"]
