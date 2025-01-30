@@ -3,14 +3,11 @@
 /root/gaianet/bin/gaianet init
 /root/gaianet/bin/gaianet start
 
-# Run the command and capture the output
-output=$(/root/gaianet/bin/gaianet info)
-
 # Extract Node ID
-node_id=$(echo "$output" | sed -n 's/Node ID: \(.*\)/\1/p')
+node_id=$(jq -r '.address' nodeid.json)
 
 # Extract Device ID
-device_id=$(echo "$output" | sed -n 's/Device ID: \(.*\)/\1/p')
+device_id=$(cat /root/gaianet/deviceid.txt)
 
 # Print the variables to verify
 echo "Node ID: $node_id"

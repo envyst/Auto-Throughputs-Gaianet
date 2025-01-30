@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:latest
 
 # Install dependencies and setup Gaianet
 RUN apt-get update && apt-get install -y curl && \
@@ -9,13 +9,13 @@ RUN apt-get update && apt-get install -y curl && \
 COPY config.json /root/gaianet/config.json
 
 # Ensure .bashrc is sourced
-RUN . ~/.bashrc
+RUN source ~/.bashrc
 
 # Entrypoint script
 COPY docker_entrypoint.sh /usr/local/bin/docker_entrypoint.sh
 RUN chmod +x /usr/local/bin/docker_entrypoint.sh
 
-# Expose port 3011
-EXPOSE 3011
+# Expose port 3030
+EXPOSE 3030
 
 ENTRYPOINT ["docker_entrypoint.sh"]

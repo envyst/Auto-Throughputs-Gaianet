@@ -19,20 +19,20 @@ done
 
 # Run the next command
 echo "Done"
-# Run the command and capture the output
-output=$(docker exec -it gaianet_node /root/gaianet/bin/gaianet info)
 
 # Extract Node ID
-node_id=$(echo "$output" | sed -n 's/Node ID: \(.*\)/\1/p')
+node_id=$(docker exec gaianet_node jq -r '.address' nodeid.json)
 
 # Extract Device ID
-device_id=$(echo "$output" | sed -n 's/Device ID: \(.*\)/\1/p')
+device_id=$(docker exec gaianet_node cat /root/gaianet/deviceid.txt)
 
 # Print the variables to verify
 echo "Node ID: $node_id"
 echo "Device ID: $device_id"
 
-# auto throughput
-screen -S gaianet-docker-throughput
-cd ../go-app/
-./program -nodeID $node_id
+echo "------------------------------------------------------------"
+echo "Next run this command to start the throughput test:"
+echo "screen -S gaianet-node-throughput"
+echo "cd ../go-app/"
+echo "./program -nodeID $node_id"
+echo "Ctrl + A + D to detach from the screen session"
