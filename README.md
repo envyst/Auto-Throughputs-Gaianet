@@ -63,11 +63,12 @@ cd gaianet-auto-throughputs/
 Run the script with:
 ```sh
 # for LINUX/MAC AMD64 and LINUX ARM64 / TERMUX / RASPBERRY PIE
-screen -S gaianet-throughputs-v2
+
+# optional : screen -S gaianet-throughputs-v2
 ./agt_*
 # you will be prompted to input thread count
 
-# Ctrl + A + D
+# optional : Ctrl + A + D
 ```
 
 ```sh
