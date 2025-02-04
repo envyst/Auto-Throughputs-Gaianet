@@ -179,12 +179,22 @@ func main() {
 ║         By: Aethereal Team            ║
 ╚═══════════════════════════════════════╝`)
 	fmt.Print("\033[0m")
-	fmt.Println(logo)
+	fmt.Print(logo)
 	fmt.Println("🔄 Initializing...")
 
-	for {
+	var numThreads int
+	fmt.Print("Please specify the number of threads to be used: ")
+	_, err = fmt.Scanln(&numThreads)
+	if err != nil || numThreads < 1 {
+		fmt.Println("Invalid input. Enter a number greater than zero.")
+		return
+	}
+
+	for i := 0; i < numThreads; i++ {
 		go runThread(userMessages, apiKey, apiURL)
 	}
+
+	select {}
 
 	// this line blocks the main goroutine from exiting, allowing the threads to run indefinitely
 	select {}

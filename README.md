@@ -65,6 +65,7 @@ Run the script with:
 # for LINUX/MAC AMD64 and LINUX ARM64 / TERMUX / RASPBERRY PIE
 screen -S gaianet-throughputs-v2
 ./agt_*
+# you will be prompted to input thread count
 
 # Ctrl + A + D
 ```
@@ -72,6 +73,7 @@ screen -S gaianet-throughputs-v2
 ```sh
 # for Windows open terminal in the folder
 .\agt_win.exe
+# you will be prompted to input thread count
 ```
 
 
