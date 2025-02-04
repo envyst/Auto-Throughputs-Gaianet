@@ -1,53 +1,79 @@
-# Auto Throughputs Gaianet
+# Auto-Throughputs-Gaianet
+Forked from : https://github.com/Aethereal-Collective/Auto-Throughputs-Gaianet
 
-## 🔧 Overview
-Auto Throughputs Gaianet is a Node.js script developed by the Aethereal Team. It automates the processing of chat messages through Gaianet's chat API, handling multiple chat messages at once and outputting the response.
+## Overview
+Auto-Throughputs-Gaianet is a script designed to send automated Throughputs the Gaianet API using multiple threads. It continuously processes user messages and interacts with the API to retrieve responses.
 
-## ⚙️ Features
-- Processes chat messages from a text file
-- Automatically sends requests to the Gaianet API.
-- Waits for 20 seconds between requests.
-- Loops the script continuously until manually stopped.
+## Node Join Domains
+Join your nodes to domains like:
+- cryptology.gaia.domains
+- p*rnhub.gaia.domains
+- esiyk.gaia.domains
+- doge.gaia.domains
+- ionet.gaia.domains
+- openai.gaia.domains
+- huggingface.gaia.domains
 
-## 🚀 Installation
+by accessing https://www.gaianet.ai/setting/nodes in three dots (...)
 
-### Prerequisites:
-- Node.js (v14 or higher)
-- `cersex.txt` file containing the chat messages you want to process.
+## Installation
+To get started, download releases zip file from this repository:
 
-### Steps:
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Aethereal-Collective/Auto-Throughputs-Gaianet
+```sh
+# If you dont have curl and unzip
+sudo apt update
+sudo apt install -y curl unzip
+```
+
+```sh
+# for LINUX/MAC AMD64
+curl -L -o "amd64.zip" "https://github.com/envyst/Auto-Throughputs-Gaianet/releases/download/v2/amd64.zip"
+unzip -o amd64.zip -d gaianet-auto-throughputs/
+cd gaianet-auto-throughputs/
+```
+
+```sh
+# for LINUX ARM64 / TERMUX / RASPBERRY PIE
+curl -L -o "arm64.zip" "https://github.com/envyst/Auto-Throughputs-Gaianet/releases/download/v2/arm64.zip"
+unzip -o arm64.zip -d gaianet-auto-throughputs/
+cd gaianet-auto-throughputs/
+```
+
+### For windows, just download and extract from [releases](https://github.com/envyst/Auto-Throughputs-Gaianet/releases) and extract
+
+## Setup
+1. **Edit `api.txt`**
+   - Open a terminal and run:
+     ```sh
+     nano api.txt
+     ```
+   - Add the following details:
+     - **First line:** API Key (Obtain from [Gaianet Settings](https://www.gaianet.ai/setting))
+     - **Second line:** API URL (Navigate to [Gaianet Chat](https://www.gaianet.ai/chat?domain) and select your domain)
+   - Click on **API Tutorial** at the bottom of the "Go to Chat" screen.
+   - Copy `/v1/chat/completions`.
+   - Copy the API key and replace it in `api.txt`.
+   - Format `api.txt` file
+   ```txt
+   APIKEY-GAIANET
+   API-DOMAINURL
    ```
-2. Create screen
-   ```bash
-   screen -S gaianet-throughputs
-   ```
-3. Navigate to directory:
-   ```bash
-   cd Auto-Throughputs-Gaianet
-   ```
-4. Install dependencies:
-   ```bash
-   npm install
-   ```
-5. Run the script:
-   ```bash
-   node index.js
-   ```
-Follow the prompts to enter your Node ID.
 
-## 📄 Usage
-Once you run the script, it will process the chats listed in `cersex.txt`. For each chat, the script will:
+## Usage
+Run the script with:
+```sh
+# for LINUX/MAC AMD64 and LINUX ARM64 / TERMUX / RASPBERRY PIE
+screen -S gaianet-throughputs-v2
+./agt_*
 
-- Send the chat message to the Gaianet API.
-- Log the response from the API.
-- Wait 20 seconds before proceeding to the next chat message.
-- Loop indefinitely until you manually stop the process.
+# Ctrl + A + D
+```
 
-## 🤝Support
-Stay connected and be part of our community:
+```sh
+# for Windows open terminal in the folder
+.\agt_win.exe
+```
 
-- [Join our Discord](https://discord.gg/aethereal)  
-- [Follow us on Twitter](https://x.com/aethereal_co)
+
+## License
+This project is open-source and available under the MIT License.
