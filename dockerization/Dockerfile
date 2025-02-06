@@ -1,13 +1,17 @@
-FROM ubuntu:22.04
+FROM ubuntu:latest
 
 RUN apt-get update \
-    && apt-get install curl jq -y
+    && apt-get upgrade -y
+
+RUN apt-get install -y \
+    curl nano lsof jq
 
 RUN curl -sSfL 'https://github.com/GaiaNet-AI/gaianet-node/releases/latest/download/install.sh' | bash
+
 RUN rm -rf /root/gaianet/config.json
+RUN rm -rf /root/gaianet/nodeid.json
 RUN . ~/.bashrc 
 
-COPY config.json /root/gaianet/config.json
+COPY nodeid.json /root/gaianet/nodeid.json
 
-RUN /root/gaianet/bin/gaianet init
-CMD ["tail", "-f", "/dev/null"]
+EXPOSE 8080
