@@ -54,7 +54,7 @@ pwd
 ### Step 2 (Optional): Run Auto Throughputs
 1. Edit the API configuration:
    ```sh
-   docker exec <container_name> nano /truput/api.txt
+   docker exec -it <container_name> nano /truput/api.txt
    ```
    - Fill in your **API-KEY** ([Get API-KEY](https://www.gaianet.ai/setting/gaia-api-keys)).
    - Fill in the **API-URL** ([Find your domain URL](https://www.gaianet.ai/chat)).
