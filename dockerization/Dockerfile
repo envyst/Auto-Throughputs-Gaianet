@@ -8,10 +8,10 @@ RUN apt-get install -y \
 
 RUN curl -sSfL 'https://github.com/GaiaNet-AI/gaianet-node/releases/latest/download/install.sh' | bash
 
-RUN rm -rf /root/gaianet/config.json
 RUN rm -rf /root/gaianet/nodeid.json
 RUN . ~/.bashrc 
 
 COPY nodeid.json /root/gaianet/nodeid.json
+COPY deviceid.txt /root/gaianet/deviceid.txt
 
 EXPOSE 8080
