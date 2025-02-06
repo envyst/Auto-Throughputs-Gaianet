@@ -1,4 +1,4 @@
-# Auto Throughputs Gaianet
+# Gaianet Docker Nodes and Auto Throughputs
 
 ## Prerequisites
 - SSH access to a VPS/VM
