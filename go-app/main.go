@@ -194,8 +194,6 @@ func main() {
 		go runThread(userMessages, apiKey, apiURL)
 	}
 
-	select {}
-
 	// this line blocks the main goroutine from exiting, allowing the threads to run indefinitely
 	select {}
 }
