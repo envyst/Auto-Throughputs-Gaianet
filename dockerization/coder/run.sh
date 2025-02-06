@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker run -dit -P gaianet-coder
+docker run -dit -P --restart unless-stopped gaianet-coder
