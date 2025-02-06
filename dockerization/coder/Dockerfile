@@ -14,4 +14,10 @@ RUN chmod +x /install.sh /restart.sh /entrypoint.sh
 
 EXPOSE 8080
 
+WORKDIR /truput
+
+COPY agt .
+COPY api.txt .
+COPY cersex.txt .
+
 ENTRYPOINT ["/entrypoint.sh"]
