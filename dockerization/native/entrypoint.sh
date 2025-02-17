@@ -4,9 +4,9 @@
 /root/gaianet/bin/gaianet init
 /root/gaianet/bin/gaianet start
 /root/gaianet/bin/gaianet info
-if [ -f "~/api.txt" ]; then
+if [ -f "/api.txt" ]; then
     # If ~/api.txt exists, run ~/agt
-    ~/agt
+    /agt
 else
     # Otherwise, tail the log file
     tail -f /root/gaianet/log/start-llamaedge.log
